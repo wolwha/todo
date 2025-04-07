@@ -43,4 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
       todoInput.value = "";
     }
   }
+
+  function savedTodo(todoValue, checkValue) {
+    const todoListObj = {
+      text: todoValue,
+      id: Date.now(),
+      checked: checkValue,
+    }; // 투두리스트 오브젝트 키값 생성
+    todolist.push(todoListObj); // 투두리스트 배열에 오브젝트 추가
+    localStorage.setItem("ToDo", JSON.stringify(todolist));
+  } // 항목을 로컬 스토리지에 저장
 });
